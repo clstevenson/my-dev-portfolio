@@ -6,7 +6,7 @@ import { Outlet } from 'react-router-dom';
 
 function App() {
   return (
-    <>
+    <div className='container hero is-fullheight'>
       <Header/>
 
       <main>
@@ -15,7 +15,7 @@ function App() {
 
       <Footer/>
 
-    </>
+    </div>
   )
 }
 

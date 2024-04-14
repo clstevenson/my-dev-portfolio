@@ -1,3 +1,5 @@
+// TODO: include small photo
+
 export default function AboutMe() {
   return (
     <section className="content">

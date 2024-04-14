@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <footer className='footer'>
-      <div className="columns has-text-centered is-vcentered">
+      <div className="columns is-vcentered">
         <p>Visit Me: </p>
         <a href="https://github.com/clstevenson" target="_new" className='mx-3'>
           <img alt="GitHub link" width="30px" src="./src/assets/GitHub.svg"/>
