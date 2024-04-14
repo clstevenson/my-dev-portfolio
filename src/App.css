@@ -1,0 +1,9 @@
+/* Custom Styles */
+ul.navbar {
+    text-align: right;
+}
+
+ul.navbar li {
+    display: inline-block;
+    margin: 0.5rem 0.5rem;
+}

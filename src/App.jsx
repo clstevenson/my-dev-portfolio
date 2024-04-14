@@ -1,16 +1,17 @@
 import { useState } from 'react'
+import './App.css'
+import NavBar from './components/Navigation'
+import { Outlet } from 'react-router-dom';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <h1 className='title is-size-1'>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-      </div>
+      <NavBar />
+
+      <main>
+        <Outlet />
+      </main>
+
     </>
   )
 }
