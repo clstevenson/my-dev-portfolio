@@ -1,12 +1,12 @@
 import { useState } from 'react'
 import './App.css'
-import NavBar from './components/Navigation'
+import Header from './components/Header'
 import { Outlet } from 'react-router-dom';
 
 function App() {
   return (
     <>
-      <NavBar />
+      <Header/>
 
       <main>
         <Outlet />

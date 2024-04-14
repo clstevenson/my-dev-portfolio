@@ -30,22 +30,19 @@ export default function Navigation() {
   const currentPage = useLocation().pathname;
 
   return (
-    <header className='columns my-2 is-vcentered'>
-      <h1 className='title column mt-2'>
-        Chris L Stevenson
-      </h1>
-      <ul className='navbar column'>
-        {navLinks.map(link => (
-          <li key={link.id}>
-            <Link
-              to={link.href}
-              className={currentPage === link.href ? 'navbar-item is-tab is-active' : 'navbar-item is-tab'}
-            >
-              {link.label}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </header>
+    <ul className='navbar column'>
+      {navLinks.map(link => (
+        <li key={link.id}>
+          <Link
+            to={link.href}
+            className={currentPage === link.href
+              ? 'navbar-item is-tab is-active'
+              : 'navbar-item is-tab'}
+          >
+            {link.label}
+          </Link>
+        </li>
+      ))}
+    </ul>
   )
 }
