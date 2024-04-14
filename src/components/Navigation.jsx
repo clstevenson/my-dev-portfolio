@@ -6,7 +6,7 @@ export default function Navigation() {
   const navLinks = [
     {
       id: crypto.randomUUID(),
-      label: 'About Me',
+      label: 'About',
       href: '/',
     },
     {
@@ -16,7 +16,7 @@ export default function Navigation() {
     },
     {
       id: crypto.randomUUID(),
-      label: 'Contact Me',
+      label: 'Contact',
       href: '/Contact',
     },
     {
