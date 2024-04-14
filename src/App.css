@@ -7,3 +7,18 @@ ul.navbar li {
     display: inline-block;
     margin: 0.2rem 0.2rem;
 }
+
+.footer {
+    height: 1.5rem;
+    background-color: white;
+    padding: 1rem;
+}
+
+.footer div {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.footer p {
+    display: inline;
+}
