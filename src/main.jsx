@@ -9,17 +9,22 @@ import About from './pages/About'
 import Contact from './pages/Contact'
 import Portfolio from './pages/Portfolio'
 import Resume from './pages/Resume'
+import Error from './pages/Error'
 
 // Define the accessible routes, and which components respond to which URL
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
-    // TODO: add "page not found" page
-    // errorElement: <Error />,
+    errorElement: <Error />,
     children: [
       {
         index: true,
+        element: <About />,
+      },
+      // Just in case they type in the route directly
+      {
+        path: '/About',
         element: <About />,
       },
       {
