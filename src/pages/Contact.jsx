@@ -1,12 +1,5 @@
 import { useState } from 'react';
-
-// Error component displays a notification message
-// (if input field is empty or email is invalid)
-const Error = ({ message }) => (
-  <div className="box mt-2 notification is-info">
-    <p className='is-size-5'> {message} </p>
-  </div>
-)
+import Notify from '../components/Notification'
 
 export default function Contact() {
   // states and setters
@@ -24,13 +17,12 @@ export default function Contact() {
         className="box"
         onSubmit={e => {
           e.preventDefault();
-          window.alert(
-            `Hello, ${name}. Email functionality is currently not available, please email me at cstevens@richmond.edu.`
+          setError(
+            `Hello, ${name}. This form cannot set an email yet, please email me at cstevens@richmond.edu by clicking the email icon below.`
           )
           setName('');
           setEmail('');
           setMessage('');
-          setError('');
         }}
       >
         <label htmlFor="name-field" className="mt-1 label">Name:</label>
@@ -84,7 +76,7 @@ export default function Contact() {
         </textarea>
 
         {/* display error notification when triggered */}
-        {error && <Error message={error} />}
+        {error && <Notify message={error} />}
 
         <button type="submit" className="button mt-2">Submit</button>
       </form>
