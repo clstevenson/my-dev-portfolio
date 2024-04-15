@@ -1,3 +1,7 @@
+/*
+ * Contact Me form for users to send me an email, with some validation of inputs
+ */
+
 import { useState } from 'react';
 import Notify from '../components/Notification'
 
@@ -10,16 +14,19 @@ export default function Contact() {
   // email validation; this is the regex the HTML form uses for validation
   const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
 
+  // each input form is tied to React (the value displays the state, onChange updates state)
   return (
     <section className="contact-form content">
       <h2 className="is-size-4">Contact Me</h2>
       <form
         className="box"
         onSubmit={e => {
+          /* prevent re-render; but validate inputs */
           e.preventDefault();
           setError(
             `Hello, ${name}. This form cannot set an email yet, please email me at cstevens@richmond.edu by clicking the email icon below.`
           )
+          /* reset state */
           setName('');
           setEmail('');
           setMessage('');
@@ -34,6 +41,7 @@ export default function Contact() {
           value={name}
           onChange={e => {
             setName(e.target.value);
+            /* once user enters data, get rid of any notifications */
             if (e.target.value) setError('');
           }}
           onBlur={() => {
@@ -50,6 +58,7 @@ export default function Contact() {
           value={email}
           onChange={e => {
             setEmail(e.target.value);
+            /* once user enters data, get rid of any notifications */
             if (e.target.value) setError('');
           }}
           onBlur={() => {
@@ -67,6 +76,7 @@ export default function Contact() {
           value={message}
           onChange={e => {
             setMessage(e.target.value);
+            /* once user enters data, get rid of any notifications */
             if (e.target.value) setError('');
           }}
           onBlur={() => {

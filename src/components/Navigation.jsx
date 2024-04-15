@@ -1,3 +1,8 @@
+/*
+ * Navigation links (navbar) which is used in the Header component
+ * React router is used for client-side routing (faster than server requests)
+ */
+
 import { Link, useLocation } from 'react-router-dom';
 
 export default function Navigation() {
@@ -29,6 +34,8 @@ export default function Navigation() {
   // get the current page to highlight the correct link tab
   const currentPage = useLocation().pathname;
 
+  // Bulma class 'is-active' is used to indicate which tag is currently active
+  // (ie corresponding to the page being displayed)
   return (
     <ul className='navbar column'>
       {navLinks.map(link => (

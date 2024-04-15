@@ -1,3 +1,7 @@
+/*
+ * Footer for all pages, containing three clickable logos
+ */
+
 export default function Footer() {
   return (
     <footer className='footer'>

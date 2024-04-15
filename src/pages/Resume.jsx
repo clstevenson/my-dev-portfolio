@@ -1,3 +1,8 @@
+/*
+ * Resume page, including link to download PDF
+ * Mostly static content
+ */
+
 export default function Resume() {
   return (
     <section className='content'>

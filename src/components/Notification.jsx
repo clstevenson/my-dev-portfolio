@@ -7,4 +7,4 @@ export default function Notification({ message }) {
       <p className='is-size-5'> {message} </p>
     </div>
   )
-};
+}

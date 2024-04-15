@@ -1,3 +1,7 @@
+/*
+ * This page is displayed for unknown routes
+ */
+
 import { useRouteError } from 'react-router-dom';
 
 export default function ErrorPage() {

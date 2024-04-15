@@ -1,3 +1,7 @@
+/*
+ * Header for all pages contains my name in the upper left and the navbar aligned to the right
+ */
+
 import NavBar from './Navigation'
 
 export default function Header() {
