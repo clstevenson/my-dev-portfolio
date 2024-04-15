@@ -8,12 +8,6 @@ ul.navbar li {
     margin: 0.2rem 0.2rem;
 }
 
-.wrapper {
-    display: flex;
-    flex-direction: column;
-    min-height: 100%;
-}
-
 .footer {
     background-color: white;
     padding: 25px;
