@@ -12,31 +12,36 @@ import Project from '../components/Project';
  * Eventually will be replaced with a database that can be updated by calling
  * into the GitHub API to get info on projects. A separate app will be created to
  * manage that database.
- *
- * Data fields:
- * - title
- * - description
- * - notes
- * - repo link
- * - deployed link
- * - num_commits (these are my commits)
- * - total_commits (for group projects)
- * - link to graphic (screenshot or demo vid)
- * - isVideo: boolean stating on whether the visual is a video to be embedded
  */
 
 const projectData = [
   {
-    title: 'My Updated Project',
-    description: 'Coolest project ever developed',
-    notes: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-    repoURL: 'https:github.com/clstevenson/my-dev-portfolio',
-    deployedURL: '',
-    myCommits: 11,
-    totalCommits: 11,
-    graphic: '',
-    isVideo: false
-  }
+    title: 'Helping Heroes Blog',
+    description: 'Post-covid communities are more fragmented, people are more isolated than ever. This blog is designed to provide a supportive electronic community where helping heroes can provide advice and resources to others in need.',
+    notes: 'A collaborative project (with two partners) that has been forked into my repo for further development. I created the model and seed routines, created all API routes, contributed the single-post page with upVote capability and commenting, and created the ability for admin users to manage the site. I plan to refactor as a React app and add some functionality.',
+    repoURL: 'https://github.com/clstevenson/helping-heroes-blog',
+    deployedURL: 'https://damp-chamber-10567-589627f31d06.herokuapp.com/',
+    graphicURL: './src/assets/HelpingHeroesScreenshot.png',
+    myCommits: 55,
+    totalCommits: 105,
+    isVideo: false,
+    languagePercentage: [
+      { JavaScript: 71.3 },
+      { Handlebars: 28.4 },
+      { CSS: 0.3 }
+    ],
+    isHighlight: true,
+    isCollaboration: true,
+    tags: [
+      'full-stack',
+      'express.js',
+      'node.js',
+      'MySQL',
+      'Sequelize',
+      'Handlebars',
+      'Bulma',
+    ],
+  },
 ];
 
 export default function Portfolio() {
