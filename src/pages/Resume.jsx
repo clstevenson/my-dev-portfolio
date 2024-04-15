@@ -52,7 +52,7 @@ export default function Resume() {
         <li>MATLAB</li>
         <li>R</li>
         <li>Excel (spreadsheet language and VBA)</li>
-        <li>JavaScript</li>
+        <li>Full stack web development: HTML, CSS, JavaScript, React, Node, MongoDB</li>
         <li>C</li>
       </ul>
       <p>
