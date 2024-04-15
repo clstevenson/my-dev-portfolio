@@ -1,15 +1,8 @@
 /**
- * This component displays information about my coding projects as a filterable list.
- * The input data will be defined here, but eventually will be in a database managed
- * by a separate (small) application.
+ * Repo data to display on the Portfolio page
+ * Eventually this data will live on a database managed by
  */
 
-// component to display each object's data
-import Project from '../components/Project';
-import projectData from '../util/projectdata';
-
-// repo data to display on page
-/**
 const projectData = [
   {
     id: crypto.randomUUID(),
@@ -18,7 +11,7 @@ const projectData = [
     notes: 'A full-stack web application developed as a collaborative project with two partners. It that has been forked into my repo for further development. I created the model and seed routines, created all API routes, contributed the single-post page with upVote capability and commenting, and created the ability for admin users to manage the site. I plan to refactor as a React app and add some functionality.',
     repoURL: 'https://github.com/clstevenson/helping-heroes-blog',
     deployedURL: 'https://damp-chamber-10567-589627f31d06.herokuapp.com/',
-    graphicURL: './src/assets/HelpingHeroesScreenshot.png',
+    graphicURL: './assets/HelpingHeroesScreenshot.png',
     myCommits: 55,
     totalCommits: 105,
     isVideo: false,
@@ -60,14 +53,5 @@ const projectData = [
     ],
   },
 ];
- */
 
-export default function Portfolio() {
-  return (
-    <div className="content">
-      {projectData.map(project => (
-        <Project key={project.id} project={project} />
-      ))}
-    </div>
-  )
-}
+export default projectData;
