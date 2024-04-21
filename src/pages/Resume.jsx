@@ -7,7 +7,7 @@ export default function Resume() {
   return (
     <section className='content'>
       <p>
-        A <a href='./src/assets/CLS_CV.pdf'>printable CV</a> is also available.
+        A <a href='./assets/CLS_CV.pdf'>printable CV</a> is also available.
       </p>
       <h2 className='is-size-4'>Employment History</h2>
       <dl>
