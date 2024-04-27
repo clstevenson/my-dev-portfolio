@@ -14,23 +14,25 @@ export default function Contact() {
   // email validation; this is the regex the HTML form uses for validation
   const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
 
+  const handleSubmit = (e) => {
+    /* prevent re-render; but validate inputs */
+    e.preventDefault();
+    setError(
+      `Hello, ${name}. This form cannot set an email yet, please email me at cstevens@richmond.edu by clicking the email icon below.`
+    )
+    /* reset state */
+    setName('');
+    setEmail('');
+    setMessage('');
+  }
+
   // each input form is tied to React (the value displays the state, onChange updates state)
   return (
     <section className="contact-form content">
       <h2 className="is-size-4">Contact Me</h2>
       <form
         className="box"
-        onSubmit={e => {
-          /* prevent re-render; but validate inputs */
-          e.preventDefault();
-          setError(
-            `Hello, ${name}. This form cannot set an email yet, please email me at cstevens@richmond.edu by clicking the email icon below.`
-          )
-          /* reset state */
-          setName('');
-          setEmail('');
-          setMessage('');
-        }}
+        onSubmit={handleSubmit}
       >
         <label htmlFor="name-field" className="mt-1 label">Name:</label>
         <input
