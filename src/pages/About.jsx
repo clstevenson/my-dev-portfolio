@@ -23,7 +23,7 @@ export default function AboutMe() {
         After decades of self-taught programming, the 24-week <a href="https://bootcamps.richmond.edu/coding/" target='_new'>Full Stack Coding Bootcamp</a> was my first programming experience in a structured learning environment as part of a group. During that time we learned a number of interesting technologies: HTML, CSS, Javascript, Node.js, React.js, MySQL and MongoDB databases, and many more. I am looking forward to using these technologies to create many data analysis and visualization applications for the web and desktop environments.
       </p>
       <p>
-        This portfolio will chronicle that journey, and I welcome all <a href="mailto:cstevens@richmond.edu">feedback and collagoration inquiries</a>.
+        This portfolio will chronicle that journey, and I welcome all <a href="mailto:cstevens@richmond.edu">feedback and collaboration inquiries</a>.
       </p>
     </section>
   )
