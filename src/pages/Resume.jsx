@@ -57,8 +57,10 @@ export default function Resume() {
         <li>MATLAB</li>
         <li>R</li>
         <li>Excel (spreadsheet language and VBA)</li>
-        <li>Full stack web development: HTML, CSS, JavaScript, React, Node, MongoDB</li>
         <li>C</li>
+        <li>
+          Full stack web development: HTML, CSS, JavaScript, React, Node, MongoDB. I have certifications for completing the University of Richmond <strong>Coding Boot Camp</strong> and Josh Comeau's <strong>CSS for JavaScript Developers</strong> course.
+        </li>
       </ul>
       <p>
         I am also expert in the LaTeX typesetting markup language.
