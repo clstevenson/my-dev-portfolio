@@ -1,24 +1,20 @@
+import { createGlobalStyle } from "styled-components";
 /*****************************************************************************/
 /*                  Global Styles (adapted from Josh Comeau)                 */
 /*****************************************************************************/
 
-/*
-  1. Use a more-intuitive box-sizing model.
-*/
+const GlobalStyles = createGlobalStyle`
+/* 1. Use a more-intuitive box-sizing model.  */
 *, *::before, *::after {
   box-sizing: border-box;
 }
 
-/*
-  2. Remove default margin
-*/
+/* 2. Remove default margin */
 * {
   margin: 0;
 }
 
-/*
-  3. Allow percentage-based heights in the application
-*/
+/* 3. Allow percentage-based heights in the application */
 html, body {
   height: 100%;
 }
@@ -61,3 +57,6 @@ p, h1, h2, h3, h4, h5, h6 {
 #root, #__next {
   isolation: isolate;
 }
+`;
+
+export default GlobalStyles;
