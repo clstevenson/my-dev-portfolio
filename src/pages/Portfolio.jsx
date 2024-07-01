@@ -12,9 +12,10 @@ import Project from '../components/Project';
 import projectData from '../util/projectdata';
 
 export default function Portfolio() {
+  const displayedProjects = projectData.filter(project => project.isHighlight);
   return (
     <div className="content">
-      {projectData.map(project => (
+      {displayedProjects.map(project => (
         <Project key={project.id} project={project} />
       ))}
     </div>
