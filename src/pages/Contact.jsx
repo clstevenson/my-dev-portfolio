@@ -2,96 +2,161 @@
  * Contact Me form for users to send me an email, with some validation of inputs
  */
 
-import { useState } from 'react';
-import Notify from '../components/Notification'
+import { useState } from "react";
+import styled from "styled-components";
+import * as Label from "@radix-ui/react-label";
+
+import { COLORS } from "../util/constants";
+import Notify from "../components/Notification";
+import Card from "../components/Card";
+import PushButton from "../components/PushButton";
+import { Title } from "../components/MyStyles";
 
 export default function Contact() {
   // states and setters
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-  const [error, setError] = useState('');
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [error, setError] = useState("");
   // email validation; this is the regex the HTML form uses for validation
-  const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+  const emailRegex =
+    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
 
   const handleSubmit = (e) => {
-    /* prevent re-render; but validate inputs */
+    // prevent re-render; but validate inputs
     e.preventDefault();
     setError(
-      `Hello, ${name}. This form cannot set an email yet, please email me at cstevens@richmond.edu by clicking the email icon below.`
-    )
+      `Hello, ${name}. This form cannot send an email yet, please email me at cstevens@richmond.edu by clicking the email icon in the footer below.`
+    );
     /* reset state */
-    setName('');
-    setEmail('');
-    setMessage('');
-  }
+    setName("");
+    setEmail("");
+    setMessage("");
+  };
 
   // each input form is tied to React (the value displays the state, onChange updates state)
   return (
-    <section className="contact-form content">
-      <h2 className="is-size-4">Contact Me</h2>
-      <form
-        className="box"
-        onSubmit={handleSubmit}
-      >
-        <label htmlFor="name-field" className="mt-1 label">Name:</label>
-        <input
-          type="text"
-          required
-          id="name-field"
-          className="input"
-          value={name}
-          onChange={e => {
-            setName(e.target.value);
-            /* once user enters data, get rid of any notifications */
-            if (e.target.value) setError('');
-          }}
-          onBlur={() => {
-            if (name === '') setError('Name cannot be empty.');
-          }}
-        />
+    <Wrapper>
+      <Card>
+        <Title>Contact Me</Title>
+        <form onSubmit={handleSubmit}>
+          <InputWrapper>
+            <NameWrapper>
+              <Label.Root htmlFor="name-field">Your name:</Label.Root>
+              <Input
+                type="text"
+                required
+                id="name-field"
+                value={name}
+                onChange={(e) => {
+                  setName(e.target.value);
+                  /* once user enters data, get rid of any notifications */
+                  if (e.target.value) setError("");
+                }}
+                onBlur={() => {
+                  if (name === "") setError("Name cannot be empty");
+                }}
+              />
+            </NameWrapper>
 
-        <label htmlFor="email-field" className="mt-1 label">Email:</label>
-        <input
-          type="email"
-          required
-          id="email-field"
-          className="input"
-          value={email}
-          onChange={e => {
-            setEmail(e.target.value);
-            /* once user enters data, get rid of any notifications */
-            if (e.target.value) setError('');
-          }}
-          onBlur={() => {
-            if (email === '') setError('Email cannot be empty.');
-            else if (!emailRegex.test(email)) setError('Please enter valid email address.')
-          }}
-        />
+            <EmailWrapper>
+              <Label.Root htmlFor="email-field">Your email:</Label.Root>
+              <Input
+                type="email"
+                required
+                id="email-field"
+                value={email}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                  /* once user enters data, get rid of any notifications */
+                  if (e.target.value) setError("");
+                }}
+                onBlur={() => {
+                  if (email === "") setError("Email cannot be empty");
+                  else if (!emailRegex.test(email))
+                    setError("Please enter valid email address");
+                }}
+              />
+            </EmailWrapper>
+          </InputWrapper>
 
-        <label htmlFor="message-field" className="mt-1 label">Message:</label>
-        <textarea
-          required
-          id="message-field"
-          className="textarea"
-          rows="15"
-          value={message}
-          onChange={e => {
-            setMessage(e.target.value);
-            /* once user enters data, get rid of any notifications */
-            if (e.target.value) setError('');
-          }}
-          onBlur={() => {
-            if (message === '') setError('Message cannot be empty.');
-          }}
-        >
-        </textarea>
+          <MessageWrapper>
+            <Label.Root htmlFor="message-field">Message:</Label.Root>
+            <Message
+              required
+              id="message-field"
+              rows="15"
+              value={message}
+              onChange={(e) => {
+                setMessage(e.target.value);
+                /* once user enters data, get rid of any notifications */
+                if (e.target.value) setError("");
+              }}
+              onBlur={() => {
+                if (message === "") setError("Message cannot be empty.");
+              }}
+            ></Message>
+          </MessageWrapper>
 
-        {/* display error notification when triggered */}
-        {error && <Notify message={error} />}
+          {/* display error notification when triggered */}
+          {error && <Notify message={error} />}
 
-        <button type="submit" className="button mt-2">Submit</button>
-      </form>
-    </section>
-  )
+          <Button type="submit">Submit</Button>
+        </form>
+      </Card>
+    </Wrapper>
+  );
 }
+
+const Wrapper = styled.article`
+  width: min(var(--max-prose-width), 100%);
+  margin: 0 auto;
+`;
+
+const InputWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  gap: 16px;
+  padding: 16px 0;
+`;
+
+const NameWrapper = styled.div`
+  display: flex;
+  flex: 1 1 200px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+`;
+
+const EmailWrapper = styled.div`
+  display: flex;
+  flex: 1 1 260px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+`;
+
+const Input = styled.input`
+  all: unset;
+  width: 100%;
+  flex: 1;
+  border-bottom: 1px solid ${COLORS.gray[700]};
+`;
+
+const MessageWrapper = styled(InputWrapper)`
+  flex-direction: column;
+`;
+
+const Message = styled.textarea`
+  width: 100%;
+  padding: 8px;
+`;
+
+const Button = styled(PushButton)`
+  display: block;
+  margin: 0 auto;
+`;
