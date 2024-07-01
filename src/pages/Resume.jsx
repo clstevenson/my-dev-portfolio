@@ -3,68 +3,123 @@
  * Mostly static content
  */
 
+import styled from "styled-components";
+import { ContentWrapper, Title } from "../components/MyStyles";
+import { WEIGHTS } from "../util/constants";
+
 export default function Resume() {
   return (
-    <section className='content'>
+    <Wrapper>
       <p>
-        A <a href='./assets/CLS_CV.pdf'>printable CV</a> is also available.
+        A <a href="./assets/CLS_CV.pdf">printable CV</a> is also available.
       </p>
-      <h2 className='is-size-4'>Employment History</h2>
+      <ResumeTitle>Employment History</ResumeTitle>
       <dl>
-        <dt>1999-present</dt>
-        <dd>Associcate Professor of Chemistry and Environmental Studies, University of Richmond</dd>
+        <Date>1999-present</Date>
+        <Activity>
+          Associcate Professor of Chemistry and Environmental Studies,
+          University of Richmond
+        </Activity>
 
-        <dt>1993--1999</dt>
-        <dd>Assistant Professor of Chemistry, University of Richmond</dd>
+        <Date>1993--1999</Date>
+        <Activity>
+          Assistant Professor of Chemistry, University of Richmond
+        </Activity>
 
-        <dt>1991-1993</dt>
-        <dd>Postdoctoral Research Scientist, Oak Ridge National Laboratory</dd>
+        <Date>1991-1993</Date>
+        <Activity>
+          Postdoctoral Research Scientist, Oak Ridge National Laboratory
+        </Activity>
       </dl>
 
-      <h2 className='is-size-4'>Education</h2>
+      <ResumeTitle>Education</ResumeTitle>
       <dl>
-        <dt>1986-1991</dt>
-        <dd>Ph.D. in Analytical Chemistry, University of Florida</dd>
+        <Date>1986-1991</Date>
+        <Activity>
+          Ph.D. in Analytical Chemistry, University of Florida
+        </Activity>
 
-        <dt>1982-1986</dt>
-        <dd>B.S. in Chemistry, University of North Carolina</dd>
+        <Date>1982-1986</Date>
+        <Activity>B.S. in Chemistry, University of North Carolina</Activity>
       </dl>
 
-      <h2 className='is-size-4'>Courses Taught</h2>
-      <ul>
+      <ResumeTitle>Courses Taught</ResumeTitle>
+      <List>
         <li>Introductory Chemistry (lecture and lab) for STEM majors/minors</li>
-        <li>Pollutant in the Environment (lecture and lab) for non-science majors</li>
+        <li>
+          Pollutant in the Environment (lecture and lab) for non-science majors
+        </li>
         <li>Environmental Chemistry</li>
         <li>Analytical Chemistry (lecture and lab)</li>
         <li>Measurement Statistics</li>
-        <li>Two Physical Chemistry lab courses (Thermodynamics, Kinetics, Quantum Chemistry)</li>
+        <li>
+          Two Physical Chemistry lab courses (Thermodynamics, Kinetics, Quantum
+          Chemistry)
+        </li>
         <li>Introduction to Environmental Studies</li>
         <li>Environmental Ethics</li>
-      </ul>
+      </List>
 
-      <h2 className='is-size-4'>Administrative Experience</h2>
-      <ul>
+      <ResumeTitle>Administrative Experience</ResumeTitle>
+      <List>
         <li>Served 10 years as Environmental Studies Program Coordinator</li>
         <li>Served six years as Chemistry Department Chair</li>
         <li>Served two years as Geography Department interim Chair</li>
-      </ul>
+      </List>
 
-      <h2 className='is-size-4'>Programming Languages</h2>
+      <ResumeTitle>Programming Languages</ResumeTitle>
       <p>
-        I have developed significant projects using the following programming languages:
+        I have developed significant projects using the following programming
+        languages:
       </p>
-      <ul>
+      <List>
         <li>MATLAB</li>
         <li>R</li>
         <li>Excel (spreadsheet language and VBA)</li>
         <li>C</li>
         <li>
-          Full stack web development: HTML, CSS, JavaScript, React, Node, MongoDB. I have certifications for completing the University of Richmond <a href="https://bootcamps.richmond.edu/coding/" target="_new">Coding Boot Camp</a> and Josh Comeau's <a href="https://css-for-js.dev" target="_new">CSS for JavaScript Developers</a> courses.
+          Full stack web development: HTML, CSS, JavaScript, React, Node,
+          MongoDB. I have certifications for completing the University of
+          Richmond{" "}
+          <a href="https://bootcamps.richmond.edu/coding/" target="_new">
+            Coding Boot Camp
+          </a>{" "}
+          and Josh Comeau's{" "}
+          <a href="https://css-for-js.dev" target="_new">
+            CSS for JavaScript Developers
+          </a>{" "}
+          courses.
         </li>
-      </ul>
-      <p>
-        I am also expert in the LaTeX typesetting markup language.
-      </p>
-    </section>
-  )
+      </List>
+      <p>I am also expert in the LaTeX typesetting markup language.</p>
+    </Wrapper>
+  );
 }
+
+const Wrapper = styled.article`
+  width: min(var(--max-prose-width), 100%);
+  margin: 0 auto;
+`;
+
+const Date = styled.dt`
+  width: fit-content;
+  text-align: right;
+  font-weight: ${WEIGHTS.bold};
+
+  &:after {
+    content: ":";
+  }
+`;
+
+const Activity = styled.dd`
+  padding-left: 2rem;
+`;
+
+const ResumeTitle = styled(Title)`
+  margin: 16px 0;
+`;
+
+const List = styled.ul`
+  list-style-type: disc;
+  margin: 16px;
+`;
