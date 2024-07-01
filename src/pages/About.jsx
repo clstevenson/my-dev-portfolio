@@ -3,13 +3,20 @@
  * All static content
  */
 
+import styled from "styled-components"
+import { ContentWrapper, Title } from "../components/MyStyles";
+
 export default function AboutMe() {
   return (
-    <section className="content">
-      <div className="columns">
-        <img alt="profile pic" src="./assets/cls_profile.jpg" className="ml-1" />
-        <h2 className='is-size-4'>My Journey as a Developer</h2>
-      </div>
+    <article>
+      <TitleWrapper>
+        <ProfileWrapper>
+        <img alt="profile pic" src="./assets/cls_profile.jpg" />
+        </ProfileWrapper>
+        <Title>My Journey as a Developer</Title>
+      </TitleWrapper>
+
+      <ContentWrapper>
       <p>
         I received my first personal computer while studying for my Chemistry PhD and fell in love with programming in a course on <a href='https://en.wikipedia.org/wiki/Chemometrics' target='_new'>Chemometrics</a>, which included multiple assignments that involved coding. My dissertation, <em>Special Considerations in Estimating Detection Limits</em>, made heavy use of Monte Carlo simulations coded in what was then called QuickBASIC, my first experience with an IDE.
       </p>
@@ -25,6 +32,20 @@ export default function AboutMe() {
       <p>
         This portfolio will chronicle that journey, and I welcome all <a href="mailto:cstevens@richmond.edu">feedback and collaboration inquiries</a>.
       </p>
-    </section>
+      </ContentWrapper>
+    </article>
   )
 }
+
+const TitleWrapper = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+`;
+
+const ProfileWrapper = styled.div`
+  clip-path: circle(
+    45% at 50% 45%
+  )
+`;
