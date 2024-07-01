@@ -59,7 +59,7 @@ export default function Resume() {
         <li>Excel (spreadsheet language and VBA)</li>
         <li>C</li>
         <li>
-          Full stack web development: HTML, CSS, JavaScript, React, Node, MongoDB. I have certifications for completing the University of Richmond <strong>Coding Boot Camp</strong> and Josh Comeau's <strong>CSS for JavaScript Developers</strong> course.
+          Full stack web development: HTML, CSS, JavaScript, React, Node, MongoDB. I have certifications for completing the University of Richmond <a href="https://bootcamps.richmond.edu/coding/" target="_new">Coding Boot Camp</a> and Josh Comeau's <a href="https://css-for-js.dev" target="_new">CSS for JavaScript Developers</a> courses.
         </li>
       </ul>
       <p>
