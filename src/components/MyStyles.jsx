@@ -3,6 +3,8 @@ import styled from "styled-components";
 
 // Prose
 export const ContentWrapper = styled.div`
+  text-align: justify;
+
   & p {
     margin: 1rem 0;
   }

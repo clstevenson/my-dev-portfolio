@@ -49,3 +49,8 @@ const ProfileWrapper = styled.div`
     45% at 50% 45%
   )
 `;
+
+const Wrapper = styled.article`
+  width: min(var(--max-prose-width), 100%);
+  margin: 0 auto;
+`;
