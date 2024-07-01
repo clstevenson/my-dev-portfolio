@@ -110,7 +110,7 @@ export default function Contact() {
 
 const Wrapper = styled.article`
   width: min(var(--max-prose-width), 100%);
-  margin: 0 auto;
+  margin: 32px auto;
 `;
 
 const InputWrapper = styled.div`
