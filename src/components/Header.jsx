@@ -2,17 +2,32 @@
  * Header for all pages contains my name in the upper left and the navbar aligned to the right
  */
 
-import NavBar from './Navigation'
+import { useState } from "react";
+import styled from "styled-components";
+import Navigation from "./Navigation";
+import { WEIGHTS } from "../util/constants";
 
 export default function Header() {
+  const [name, setName] = useState("Christopher L. Stevenson");
+
   return (
-    <header className='columns my-2 is-vcentered'>
-      <h1 className='title column is-two-fifths mt-2'>
-        Chris L Stevenson
-      </h1>
-
+    <Wrapper>
+      <Title>{name}</Title>
       <NavBar />
-
-    </header>
-  )
+    </Wrapper>
+  );
 }
+
+const Wrapper = styled.header`
+  display: flex;
+  align-items: baseline;
+`;
+
+const Title = styled.h1`
+  font-size: 1.75rem;
+  font-weight: ${WEIGHTS.bold};
+  margin-right: auto;
+`;
+
+// This will need to disappear on mobile devices
+const NavBar = styled(Navigation)``;

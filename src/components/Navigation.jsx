@@ -3,31 +3,32 @@
  * React router is used for client-side routing (faster than server requests)
  */
 
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation } from "react-router-dom";
+import styled from "styled-components";
+import { COLORS } from "../util/constants";
 
 export default function Navigation() {
-
   // navigational links
   const navLinks = [
     {
       id: crypto.randomUUID(),
-      label: 'About',
-      href: '/',
+      label: "About",
+      href: "/",
     },
     {
       id: crypto.randomUUID(),
-      label: 'Portfolio',
-      href: '/Portfolio',
+      label: "Portfolio",
+      href: "/Portfolio",
     },
     {
       id: crypto.randomUUID(),
-      label: 'Contact',
-      href: '/Contact',
+      label: "Contact",
+      href: "/Contact",
     },
     {
       id: crypto.randomUUID(),
-      label: 'Resume',
-      href: '/Resume',
+      label: "Resume",
+      href: "/Resume",
     },
   ];
 
@@ -37,19 +38,41 @@ export default function Navigation() {
   // Bulma class 'is-active' is used to indicate which tag is currently active
   // (ie corresponding to the page being displayed)
   return (
-    <ul className='navbar column'>
-      {navLinks.map(link => (
-        <li key={link.id}>
-          <Link
-            to={link.href}
-            className={currentPage === link.href
-              ? 'navbar-item is-tab is-active'
-              : 'navbar-item is-tab'}
-          >
-            {link.label}
-          </Link>
-        </li>
+    <NavBar>
+      {navLinks.map((link) => (
+        <ListItem key={link.id} isCurrent={link.href === currentPage}>
+          <NavLink to={link.href}>{link.label}</NavLink>
+        </ListItem>
       ))}
-    </ul>
-  )
+    </NavBar>
+  );
 }
+
+const NavBar = styled.ul`
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  font-size: 1.15rem;
+`;
+
+const ListItem = styled.li`
+  padding: 0 4px;
+  transition: transform 400ms;
+  border-bottom: ${({ isCurrent }) => {
+    return isCurrent && "2px solid " + COLORS.primary;
+  }};
+
+  &:hover {
+    transform-origin: 50% 100%;
+    transform: scale(1.1);
+    transition: transform 200ms;
+  }
+`;
+
+const NavLink = styled(Link)`
+  color: ${COLORS.primary};
+
+  ${ListItem}:hover & {
+    color: ${COLORS.primary_light};
+  }
+`;
