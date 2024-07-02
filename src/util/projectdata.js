@@ -22,7 +22,7 @@ const projectData = [
     languagePercentage: [{ JavaScript: 77.3 }, { CSS: 22.5 }, { HTML: 0.2 }],
     isHighlight: true,
     isCollaboration: true,
-    tags: ["full-stack", "GraphQL", "MERN", "MongoDB", "Mongoose"],
+    tags: ["full-stack", "GraphQL", "React", "MongoDB", "Mongoose"],
   },
   {
     id: crypto.randomUUID(),

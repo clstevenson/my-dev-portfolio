@@ -5,6 +5,8 @@
 
 import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
+import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
+import { DotFilledIcon } from "@radix-ui/react-icons";
 import { COLORS, QUERIES } from "../util/constants";
 
 export default function Navigation() {
@@ -35,20 +37,70 @@ export default function Navigation() {
   // get the current page to highlight the correct link tab
   const currentPage = useLocation().pathname;
 
-  // Bulma class 'is-active' is used to indicate which tag is currently active
-  // (ie corresponding to the page being displayed)
   return (
-    <NavBar>
-      {navLinks.map((link) => (
-        <ListItem key={link.id} isCurrent={link.href === currentPage}>
-          <NavLink to={link.href}>{link.label}</NavLink>
-        </ListItem>
-      ))}
-    </NavBar>
+    <Wrapper>
+      <NavBar>
+        {navLinks.map((link) => (
+          <ListItem key={link.id} isCurrent={link.href === currentPage}>
+            <NavLink to={link.href}>{link.label}</NavLink>
+          </ListItem>
+        ))}
+      </NavBar>
+      <DropDownWrapper>
+        <DropdownMenu.Root>
+          <DropdownMenu.Trigger>
+            <img src="./assets/menu.svg" alt="navigation menu icon" />
+          </DropdownMenu.Trigger>
+          <DropdownMenuContent align="end" loop="true">
+            {navLinks.map((link) => (
+              <DropdownMenuItem key={link.id}>
+                {link.href === currentPage && <CurrentPage />}
+                <NavLink to={link.href}>{link.label}</NavLink>
+              </DropdownMenuItem>
+            ))}
+          </DropdownMenuContent>
+        </DropdownMenu.Root>
+      </DropDownWrapper>
+    </Wrapper>
   );
 }
 
+const Wrapper = styled.nav`
+  position: relative;
+`;
+
+const DropdownMenuItem = styled(DropdownMenu.Item)`
+  position: relative;
+  padding: 0 24px;
+  outline: none;
+
+  &[data-highlighted] {
+    background-color: ${COLORS.primary};
+    color: ${COLORS.white};
+  }
+`;
+
+const CurrentPage = styled(DotFilledIcon)`
+  position: absolute;
+  transform: translate(-16px, 5px);
+`;
+
+const DropDownWrapper = styled.div`
+  display: none;
+
+  @media ${QUERIES.mobile} {
+    display: revert;
+  }
+`;
+
+const DropdownMenuContent = styled(DropdownMenu.Content)`
+  background-color: ${COLORS.white};
+  border-radius: 4px;
+  box-shadow: 2px 4px 8px ${COLORS.gray[500]};
+`;
+
 const NavBar = styled.ul`
+  /* display: none; */
   display: flex;
   flex-direction: row;
   gap: 16px;
@@ -57,6 +109,9 @@ const NavBar = styled.ul`
   @media ${QUERIES.tabletAndLess} {
     gap: 12px;
     font-size: 1rem;
+  }
+  @media ${QUERIES.mobile} {
+    display: none;
   }
 `;
 
@@ -79,5 +134,10 @@ const NavLink = styled(Link)`
 
   ${ListItem}:hover & {
     color: ${COLORS.primary_light};
+  }
+
+  ${DropdownMenuItem}[data-highlighted] & {
+    color: ${COLORS.white};
+    outline: none;
   }
 `;

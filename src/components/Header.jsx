@@ -9,11 +9,9 @@ import { QUERIES, WEIGHTS } from "../util/constants";
 export default function Header() {
   return (
     <Wrapper>
-      <LongName>Christoper L Stevenson</LongName>
+      <LongName>Christopher L Stevenson</LongName>
       <ShortName>Chris Stevenson</ShortName>
-      <NavWrapper>
-        <NavBar />
-      </NavWrapper>
+      <NavBar />
     </Wrapper>
   );
 }
@@ -41,11 +39,5 @@ const ShortName = styled(LongName)`
 
   @media ${QUERIES.tabletAndLess} {
     display: revert;
-  }
-`;
-
-const NavWrapper = styled.div`
-  @media ${QUERIES.mobile} {
-    display: none;
   }
 `;
