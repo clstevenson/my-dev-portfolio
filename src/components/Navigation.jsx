@@ -5,7 +5,7 @@
 
 import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
-import { COLORS } from "../util/constants";
+import { COLORS, QUERIES } from "../util/constants";
 
 export default function Navigation() {
   // navigational links
@@ -53,6 +53,11 @@ const NavBar = styled.ul`
   flex-direction: row;
   gap: 16px;
   font-size: 1.15rem;
+
+  @media ${QUERIES.tabletAndLess} {
+    gap: 12px;
+    font-size: 1rem;
+  }
 `;
 
 const ListItem = styled.li`

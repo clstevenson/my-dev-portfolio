@@ -2,18 +2,18 @@
  * Header for all pages contains my name in the upper left and the navbar aligned to the right
  */
 
-import { useState } from "react";
 import styled from "styled-components";
-import Navigation from "./Navigation";
-import { WEIGHTS } from "../util/constants";
+import NavBar from "./Navigation";
+import { QUERIES, WEIGHTS } from "../util/constants";
 
 export default function Header() {
-  const [name, setName] = useState("Christopher L. Stevenson");
-
   return (
     <Wrapper>
-      <Title>{name}</Title>
-      <NavBar />
+      <LongName>Christoper L Stevenson</LongName>
+      <ShortName>Chris Stevenson</ShortName>
+      <NavWrapper>
+        <NavBar />
+      </NavWrapper>
     </Wrapper>
   );
 }
@@ -21,13 +21,31 @@ export default function Header() {
 const Wrapper = styled.header`
   display: flex;
   align-items: baseline;
+  padding: 8px 0;
+  background: transparent;
 `;
 
-const Title = styled.h1`
+const LongName = styled.h1`
   font-size: 1.75rem;
   font-weight: ${WEIGHTS.bold};
   margin-right: auto;
+
+  @media ${QUERIES.tabletAndLess} {
+    display: none;
+  }
 `;
 
-// This will need to disappear on mobile devices
-const NavBar = styled(Navigation)``;
+const ShortName = styled(LongName)`
+  display: none;
+  font-size: 1.6rem;
+
+  @media ${QUERIES.tabletAndLess} {
+    display: revert;
+  }
+`;
+
+const NavWrapper = styled.div`
+  @media ${QUERIES.mobile} {
+    display: none;
+  }
+`;
