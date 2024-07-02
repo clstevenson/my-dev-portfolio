@@ -1,17 +1,4 @@
 /* Custom Styles */
-.footer {
-    padding: 25px;
-    margin-top: auto;
-}
-
-.footer div {
-    width: fit-content;
-    margin: 0 auto;
-}
-
-.footer p {
-    display: inline;
-}
 
 /* next two are for YT video embeds */
 /* Adapted from https://dev.to/bravemaster619/simplest-way-to-embed-a-youtube-video-in-your-react-app-3bk2 */

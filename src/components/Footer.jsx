@@ -2,21 +2,40 @@
  * Footer for all pages, containing three clickable logos
  */
 
+import styled from "styled-components";
+
 export default function Footer() {
   return (
-    <footer className='footer'>
-      <div className="columns is-vcentered">
-        {/* <p>Visit Me: </p> */}
-        <a href="https://github.com/clstevenson" target="_new" className='mx-3'>
-          <img alt="GitHub link" width="30px" src="./assets/GitHub.svg"/>
-        </a>
-        <a href="https://www.linkedin.com/in/chris-stevenson-72bb2b18/" target="_new" className='mx-3'>
-          <img alt="LinkedIn link" width="30px" src="./assets/In-Blue-40.png"/>
-        </a>
-        <a href="mailto:cstevens@richmond.edu" className='mx-3'>
-          <img alt="Email" width="30px" src="./assets/mail-outline.svg"/>
-        </a>
-      </div>
-    </footer>
-  )
+    <Wrapper>
+      <a href="https://github.com/clstevenson" target="_new">
+        <img alt="My GitHub page" width="30px" src="./assets/GitHub.svg" />
+      </a>
+      <a
+        href="https://www.linkedin.com/in/chris-stevenson-72bb2b18/"
+        target="_new"
+      >
+        <img
+          alt="My LinkedIn page"
+          width="30px"
+          src="./assets/In-Blue-40.png"
+        />
+      </a>
+      <a href="mailto:cstevens@richmond.edu">
+        <img
+          alt="Send me an email"
+          width="30px"
+          src="./assets/mail-outline.svg"
+        />
+      </a>
+    </Wrapper>
+  );
 }
+
+const Wrapper = styled.footer`
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 0;
+  background: transparent;
+`;
