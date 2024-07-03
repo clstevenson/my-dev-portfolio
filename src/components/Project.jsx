@@ -120,7 +120,7 @@ const ImageLink = styled.a`
 
   &:hover img {
     transform-origin: 50% 0%;
-    transform: scale(1.1);
+    transform: scale(1.05);
     transition: transform 250ms;
   }
 `;

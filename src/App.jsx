@@ -23,13 +23,13 @@ function App() {
 
 const Wrapper = styled.div`
   min-height: 100%;
-  max-height: 100%;
+  /* max-height: 100%; */
   display: flex;
   flex-direction: column;
 `;
 
 const Main = styled.main`
-  overflow: auto;
+  /* overflow: auto; */
 `;
 
 export default App;
