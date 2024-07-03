@@ -1,14 +1,19 @@
 /* Shared styled components */
 import styled from "styled-components";
+import { WEIGHTS } from "../util/constants";
 
 // Prose
 export const ContentWrapper = styled.div`
   text-align: justify;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  overflow-wrap: break-word;
 
   & p {
     margin: 1rem 0;
     /* while I feel serif fonts are more legible, it is too jarring to switch back and forth */
-    /* font-family: var(--font-serif); */
+    font-family: var(--font-serif);
+    font-weight: ${WEIGHTS.medium};
   }
 `;
 

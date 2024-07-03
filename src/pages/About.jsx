@@ -21,7 +21,8 @@ export default function AboutMe() {
         <ContentWrapper>
           <p>
             I received my first personal computer while studying for my
-            Chemistry PhD and fell in love with programming in a course on{" "}
+            doctorate in Chemistry and fell in love with programming in a course
+            on{" "}
             <a href="https://en.wikipedia.org/wiki/Chemometrics" target="_new">
               Chemometrics
             </a>

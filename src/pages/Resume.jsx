@@ -135,7 +135,8 @@ const ResumeTitle = styled(Title)`
 
 const List = styled.ul`
   list-style-type: disc;
-  margin: 16px;
+  margin: 16px 0;
+  padding-left: 16px;
 `;
 
 const Spacer = styled.div`

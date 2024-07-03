@@ -121,7 +121,11 @@ const Graphic = styled.div`
   overflow: hidden;
   outline-offset: 1px;
 
+  /* show link outline on hover and on phones */
   &:hover {
+    outline: 1px solid ${COLORS.primary_light};
+  }
+  @media ${QUERIES.mobile} {
     outline: 1px solid ${COLORS.primary_light};
   }
 `;

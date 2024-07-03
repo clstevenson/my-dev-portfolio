@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { COLORS } from "./util/constants";
 
 const GlobalStyles = createGlobalStyle`
 *, *::before, *::after {
@@ -32,6 +33,19 @@ p, h1, h2, h3, h4, h5, h6 {
 /* Create a root stacking context */
 #root, #__next {
   isolation: isolate;
+}
+
+/* eliminate link underlines by default */
+a {
+  text-decoration: none;
+}
+
+a:link, a:visited {
+  color: hsl(206deg 75% 40%);
+}
+
+a:hover {
+  color: hsl(206deg 55% 70%);
 }
 
 /* Global CSS variables */
