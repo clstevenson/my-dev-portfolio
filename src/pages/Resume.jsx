@@ -16,7 +16,7 @@ export default function Resume() {
         <dl>
           <Date>1999-present</Date>
           <Activity>
-            Associcate Professor of Chemistry and Environmental Studies,
+            Associate Professor of Chemistry and Environmental Studies,
             University of Richmond
           </Activity>
 
@@ -81,8 +81,8 @@ export default function Resume() {
             Introductory Chemistry (lecture and lab) for STEM majors/minors
           </li>
           <li>
-            Pollutant in the Environment (lecture and lab) for non-science
-            majors
+            Pollutants in the Environment (lecture and lab), a course for
+            non-science majors
           </li>
           <li>Environmental Chemistry</li>
           <li>Analytical Chemistry (lecture and lab)</li>
