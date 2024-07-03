@@ -6,7 +6,7 @@
 import YoutubeEmbed from "../components/YoutubeEmbed";
 import styled from "styled-components";
 import Card from "./Card";
-import { COLORS, QUERIES, WEIGHTS } from "../util/constants";
+import { COLORS, QUERIES } from "../util/constants";
 
 // local component to return language percentages (as given by GitHub)
 // input is an array of objects, each of which gives the language and its contribution
@@ -96,6 +96,10 @@ const Wrapper = styled.div`
 const Description = styled.div`
   flex-basis: 40%;
   flex-shrink: 1;
+
+  & p {
+    margin: 1rem 0;
+  }
 `;
 
 const Graphic = styled.div`
@@ -110,6 +114,10 @@ const Graphic = styled.div`
 `;
 
 const ImageLink = styled.a`
+  & img {
+    width: 100%;
+  }
+
   &:hover img {
     transform-origin: 50% 0%;
     transform: scale(1.1);

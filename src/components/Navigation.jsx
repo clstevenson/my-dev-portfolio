@@ -105,6 +105,7 @@ const NavBar = styled.ul`
   flex-direction: row;
   gap: 16px;
   font-size: 1.15rem;
+  list-style: none;
 
   @media ${QUERIES.tabletAndLess} {
     gap: 12px;
@@ -131,6 +132,7 @@ const ListItem = styled.li`
 
 const NavLink = styled(Link)`
   color: ${COLORS.primary};
+  text-decoration: none;
 
   ${ListItem}:hover & {
     color: ${COLORS.primary_light};
