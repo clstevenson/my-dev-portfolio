@@ -1,25 +1,35 @@
-import { useState } from 'react'
-import './App.css'
-import Header from './components/Header'
-import Footer from './components/Footer'
-import { Outlet } from 'react-router-dom';
-import GlobalStyles from './GlobalStyles';
+import styled from "styled-components";
+
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import { Outlet } from "react-router-dom";
+import GlobalStyles from "./GlobalStyles";
 
 function App() {
   return (
-    <div className='container hero is-fullheight'>
+    <Wrapper>
       <GlobalStyles />
 
-      <Header/>
+      <Header />
 
-      <main>
+      <Main>
         <Outlet />
-      </main>
+      </Main>
 
-      <Footer/>
-
-    </div>
-  )
+      <Footer />
+    </Wrapper>
+  );
 }
 
-export default App
+const Wrapper = styled.div`
+  min-height: 100%;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+`;
+
+const Main = styled.main`
+  overflow: auto;
+`;
+
+export default App;

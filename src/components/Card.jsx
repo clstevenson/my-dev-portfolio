@@ -5,7 +5,7 @@ export default function Card({ children }) {
   return <Wrapper>{children}</Wrapper>;
 }
 
-const Wrapper = styled.div`
+const Wrapper = styled.article`
   padding: 20px;
   margin: 24px 0;
   border-radius: 12px;

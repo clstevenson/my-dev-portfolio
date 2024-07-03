@@ -1,5 +1,4 @@
 import { createGlobalStyle } from "styled-components";
-import { COLORS } from "./util/constants";
 
 const GlobalStyles = createGlobalStyle`
 *, *::before, *::after {
@@ -10,7 +9,7 @@ const GlobalStyles = createGlobalStyle`
   margin: 0;
 }
 
-html, body {
+html, body, #root {
   height: 100%;
 }
 
@@ -39,8 +38,13 @@ p, h1, h2, h3, h4, h5, h6 {
 :root {
   /* text shouldn't be too wide to read easily */
   --max-prose-width: 80ch;
+  --font-sans-serif: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
+  --font-serif: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
 }
 
+html {
+  font-family: var(--font-sans-serif);
+}
 `;
 
 export default GlobalStyles;

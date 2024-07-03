@@ -4,7 +4,7 @@
 
 import styled from "styled-components";
 import NavBar from "./Navigation";
-import { QUERIES, WEIGHTS } from "../util/constants";
+import { COLORS, QUERIES, WEIGHTS } from "../util/constants";
 
 export default function Header() {
   return (
@@ -19,7 +19,7 @@ export default function Header() {
 const Wrapper = styled.header`
   display: flex;
   align-items: baseline;
-  padding: 8px 0;
+  padding: 4px 0;
   background: transparent;
 `;
 

@@ -8,7 +8,7 @@ export default function Footer() {
   return (
     <Wrapper>
       <a href="https://github.com/clstevenson" target="_new">
-        <img alt="My GitHub page" width="30px" src="./assets/GitHub.svg" />
+        <img alt="My GitHub page" width="24px" src="./assets/GitHub.svg" />
       </a>
       <a
         href="https://www.linkedin.com/in/chris-stevenson-72bb2b18/"
@@ -16,14 +16,14 @@ export default function Footer() {
       >
         <img
           alt="My LinkedIn page"
-          width="30px"
+          width="24px"
           src="./assets/In-Blue-40.png"
         />
       </a>
       <a href="mailto:cstevens@richmond.edu">
         <img
           alt="Send me an email"
-          width="30px"
+          width="24px"
           src="./assets/mail-outline.svg"
         />
       </a>
@@ -36,6 +36,7 @@ const Wrapper = styled.footer`
   gap: 24px;
   justify-content: center;
   align-items: center;
-  padding: 16px 0;
+  padding: 8px 0;
   background: transparent;
+  margin-top: auto;
 `;

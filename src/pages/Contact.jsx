@@ -6,7 +6,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import * as Label from "@radix-ui/react-label";
 
-import { COLORS } from "../util/constants";
+import { COLORS, WEIGHTS } from "../util/constants";
 import Notify from "../components/Notification";
 import Card from "../components/Card";
 import PushButton from "../components/PushButton";
@@ -110,7 +110,7 @@ export default function Contact() {
 
 const Wrapper = styled.article`
   width: min(var(--max-prose-width), 100%);
-  margin: 32px auto;
+  margin: 24px auto;
 `;
 
 const InputWrapper = styled.div`
@@ -152,11 +152,13 @@ const MessageWrapper = styled(InputWrapper)`
 `;
 
 const Message = styled.textarea`
-  width: 100%;
   padding: 8px;
+  min-width: 100%;
+  max-width: 100%;
 `;
 
 const Button = styled(PushButton)`
   display: block;
   margin: 0 auto;
+  font-weight: ${WEIGHTS.medium};
 `;
