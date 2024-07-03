@@ -72,7 +72,7 @@ export default function Project({ project }) {
           ) : (
             <ImageLink href={project.deployedURL} target="_new">
               <img
-                alt={`${project.title} screenshot`}
+                alt={`${project.title} screenshot and link`}
                 src={project.graphicURL}
               />
             </ImageLink>
@@ -102,26 +102,27 @@ const Description = styled.div`
   }
 `;
 
-const Graphic = styled.div`
-  flex-basis: 60%;
-  flex-shrink: 1;
-  overflow: hidden;
-  outline-offset: 2px;
-
-  &:hover {
-    outline: 2px solid ${COLORS.gray[500]};
-  }
-`;
-
 const ImageLink = styled.a`
   & img {
     width: 100%;
   }
 
-  &:hover img {
+  &:hover img,
+  &:focus img {
     transform-origin: 50% 0%;
-    transform: scale(1.05);
+    transform: scale(1.02);
     transition: transform 250ms;
+  }
+`;
+
+const Graphic = styled.div`
+  flex-basis: 60%;
+  flex-shrink: 1;
+  overflow: hidden;
+  outline-offset: 1px;
+
+  &:hover {
+    outline: 1px solid ${COLORS.primary_light};
   }
 `;
 
