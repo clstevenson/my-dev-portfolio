@@ -38,7 +38,9 @@ p, h1, h2, h3, h4, h5, h6 {
 :root {
   /* text shouldn't be too wide to read easily */
   --max-prose-width: 80ch;
-  --font-sans-serif: Inter, "SF Pro", "Segoe UI", Roboto, Oxygen, Ubuntu, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /* first font-stack is from Bulma, second is JWC's "system font stack" suggestion */
+  /* --font-sans-serif: Inter, "SF Pro", "Segoe UI", Roboto, Oxygen, Ubuntu, "Helvetica Neue", Helvetica, Arial, sans-serif; */
+  --font-sans-serif: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
   --font-serif: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
 }
 
