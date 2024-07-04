@@ -8,16 +8,18 @@
 // Users would add tags to display repos reflecting those items
 
 // component to display each object's data
-import Project from '../components/Project';
-import projectData from '../util/projectdata';
+import Project from "../components/Project";
+import projectData from "../util/projectdata";
 
 export default function Portfolio() {
-  const displayedProjects = projectData.filter(project => project.isHighlight);
+  const displayedProjects = projectData.filter(
+    (project) => project.isHighlight
+  );
   return (
-    <div className="content">
-      {displayedProjects.map(project => (
+    <>
+      {displayedProjects.map((project) => (
         <Project key={project.id} project={project} />
       ))}
-    </div>
-  )
+    </>
+  );
 }

@@ -140,8 +140,7 @@ const projectData = [
   {
     id: crypto.randomUUID(),
     title: "Excel Lambda Functions",
-    description:
-      "At the present time I have written 38 Lambda functions (over 1000 lines of code) to perform a variety of statistical calculations in Excel",
+    description: `At present I have written 38 Lambda functions (over 1000 lines of code, publicly available in a GitHub gist) to perform a variety of statistical calculations in Excel.`,
     notes:
       "With the introduction of the LAMBDA and LET functions, Excel's spreadsheet language -- the language used to create cell formulas in Excel -- has become much more powerful; Turing-complete, in fact. Lambda functions can be used in any Excel worksheet or even in the Excel online web applications. Some MS engineers have created an add-in, now called Excel Labs, whereby users can share Lambda functions through GitHub Gists. I have recently made my functions publicly available to all; I also use them in an add-in I am developing (not yet public) for more sophisticated data analysis in Excel. The embedded video is a rather long introduction to using Lambda functions in Excel and why you would want to do so; note that at the time the video was made, the Excel Labs add-in was called the Advanced Formula Environment add-in.",
     repoURL:
