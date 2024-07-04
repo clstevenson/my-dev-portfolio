@@ -5,7 +5,6 @@
 // component to embed YouTube videos (app demos usually) in an iframe
 import YoutubeEmbed from "../components/YoutubeEmbed";
 import styled from "styled-components";
-import Card from "./Card";
 import { COLORS, QUERIES } from "../util/constants";
 
 // local component to return language percentages (as given by GitHub)
@@ -25,7 +24,7 @@ const Languages = ({ percentages }) => {
 // now display the info
 export default function Project({ project }) {
   return (
-    <Card>
+    <ProjectCard>
       <Wrapper>
         <Description>
           <h3>{project.title}</h3>
@@ -79,7 +78,7 @@ export default function Project({ project }) {
           )}
         </Graphic>
       </Wrapper>
-    </Card>
+    </ProjectCard>
   );
 }
 
@@ -133,5 +132,19 @@ const Graphic = styled.div`
 const Details = styled.div`
   @media ${QUERIES.tabletAndLess} {
     display: none;
+  }
+`;
+
+// Slighly modified from Card styling
+const ProjectCard = styled.article`
+  max-width: 1500px;
+  padding: 20px;
+  margin: 24px auto;
+  border-radius: 12px;
+  box-shadow: 2px 4px 8px ${COLORS.gray[700]};
+  background-color: ${COLORS.white};
+
+  @media (max-width: 1548px) {
+    margin: 24px;
   }
 `;
