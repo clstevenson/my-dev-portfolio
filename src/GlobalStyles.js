@@ -59,7 +59,7 @@ a:hover {
 
 html {
   font-family: var(--font-sans-serif);
-  background-color: ${COLORS.gray[100]};
+  /* background-color: ${COLORS.gray[100]}; */
 }
 `;
 
