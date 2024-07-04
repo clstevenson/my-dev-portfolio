@@ -11,9 +11,7 @@ export const ContentWrapper = styled.div`
 
   & p {
     margin: 1rem 0;
-    /* while I feel serif fonts are more legible, it is too jarring to switch back and forth */
     font-family: var(--font-serif);
-    font-weight: ${WEIGHTS.medium};
   }
 `;
 
