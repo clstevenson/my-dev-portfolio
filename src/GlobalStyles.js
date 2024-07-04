@@ -48,7 +48,6 @@ a:hover {
   color: hsl(206deg 55% 70%);
 }
 
-/* Global CSS variables */
 :root {
   /* text shouldn't be too wide to read easily */
   --max-prose-width: 80ch;
@@ -60,6 +59,7 @@ a:hover {
 
 html {
   font-family: var(--font-sans-serif);
+  background-color: ${COLORS.gray[100]};
 }
 `;
 

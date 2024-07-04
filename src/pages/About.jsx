@@ -39,9 +39,9 @@ export default function AboutMe() {
             </a>{" "}
             involved devising new methods analyze chemical pollutants and as
             part of that research I had to write an instrument driver program to
-            simultaneously control the wavelengths of a laser and the light
+            control simultaneously the wavelengths of a laser and the light
             detection device. Since synchronization was so critical, I could not
-            use a high-level language. I taught myself C and fell further down
+            use an interpreted language. I taught myself C and fell further down
             the coding rabbit hole.
           </p>
           <p>
