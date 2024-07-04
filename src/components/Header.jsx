@@ -3,7 +3,7 @@
  */
 
 import styled from "styled-components";
-import NavBar from "./Navigation";
+import Navigation from "./Navigation";
 import { QUERIES, WEIGHTS } from "../util/constants";
 
 export default function Header() {
@@ -11,7 +11,7 @@ export default function Header() {
     <Wrapper>
       <LongName>Christopher L Stevenson</LongName>
       <ShortName>Chris Stevenson</ShortName>
-      <NavBar />
+      <Navigation />
     </Wrapper>
   );
 }
