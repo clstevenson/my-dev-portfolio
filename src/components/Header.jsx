@@ -4,7 +4,7 @@
 
 import styled from "styled-components";
 import Navigation from "./Navigation";
-import { QUERIES, WEIGHTS } from "../util/constants";
+import { BREAKPOINTS, QUERIES, WEIGHTS } from "../util/constants";
 
 export default function Header() {
   return (
@@ -21,6 +21,15 @@ const Wrapper = styled.header`
   align-items: baseline;
   padding: 4px 32px;
   background: transparent;
+  /* on large screens constrain width and keep centered */
+  width: ${BREAKPOINTS.laptopMax}px;
+  margin: 0 auto;
+
+  @media ${QUERIES.laptopAndLess} {
+    /* allow fluidity on smaller screens */
+    width: revert;
+    margin: revert;
+  }
 `;
 
 const LongName = styled.h1`
