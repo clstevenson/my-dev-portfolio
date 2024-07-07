@@ -13,6 +13,7 @@ import Card from "../components/Card";
 import PushButton from "../components/PushButton";
 import { Title } from "../components/MyStyles";
 import ToastMessage from "../components/ToastMessage";
+import Spinner from "../components/Spinner";
 
 export default function Contact() {
   // states and setters
@@ -134,6 +135,9 @@ export default function Contact() {
               toastCloseEffect={toastCloseEffect}
             />
           )}
+
+          {/* display spinner while email is sending */}
+          {mailStatus === "pending" && <Spinner />}
 
           <Button type="submit">Submit</Button>
         </form>

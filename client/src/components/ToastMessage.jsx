@@ -1,3 +1,16 @@
+/* 
+ A component to temporarily display a message to the user, based on
+ unstyled Radix "Toast" component.
+
+ Input props:
+ - duration in ms (default is 3000)
+- title (optional, default to empty)
+- message to display
+- toastCloseEffect, a callback function that will run when the component closes (eg to change some state)
+
+See https://www.radix-ui.com/primitives/docs/components/dialog for more options.
+ */
+
 import styled, { keyframes } from "styled-components";
 import * as Toast from "@radix-ui/react-toast";
 import { COLORS } from "../util/constants";
