@@ -7,5 +7,13 @@ export default defineConfig({
   server: {
     port: 3000,
     open: true,
+    // development server makes API requests to local Express server on port 3001
+    proxy: {
+      '/api' :{
+        target: 'http://localhost:3001',
+        changeOrigin: true,
+        secure: false,
+      }
+    }
   }
 })

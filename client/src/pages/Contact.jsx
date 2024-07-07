@@ -5,6 +5,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 import * as Label from "@radix-ui/react-label";
+import axios from "axios";
 
 import { COLORS, WEIGHTS } from "../util/constants";
 import Notify from "../components/Notification";
@@ -25,13 +26,25 @@ export default function Contact() {
   const handleSubmit = (e) => {
     // prevent re-render; but validate inputs
     e.preventDefault();
-    setError(
-      `Hello, ${name}. This form cannot send an email yet, please email me at cstevens@richmond.edu by clicking the email icon in the footer below.`
-    );
-    /* reset state */
-    setName("");
-    setEmail("");
-    setMessage("");
+
+    // send email data to server
+    // need to have some indicator of send progress
+    axios.post('/api/mail', {
+      name: name,
+      address: email,
+      message: message
+    })
+      .then(res => {
+        // need to replace line below with a Toast
+        setError(`Success!`);
+        setName("");
+        setEmail("");
+        setMessage("");
+      })
+      .catch(err => {
+        console.log({err});
+        setError(`Error: ${err}`);
+      });
   };
 
   // each input form is tied to React (the value displays the state, onChange updates state)
