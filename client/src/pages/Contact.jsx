@@ -12,6 +12,7 @@ import Notify from "../components/Notification";
 import Card from "../components/Card";
 import PushButton from "../components/PushButton";
 import { Title } from "../components/MyStyles";
+import ToastMessage from "../components/ToastMessage";
 
 export default function Contact() {
   // states and setters
@@ -19,6 +20,9 @@ export default function Contact() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
+  // options for mail status: none, pending, sent
+  const [mailStatus, setMailStatus] = useState("none");
+
   // email validation; this is the regex the HTML form uses for validation
   const emailRegex =
     /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
@@ -27,24 +31,32 @@ export default function Contact() {
     // prevent re-render; but validate inputs
     e.preventDefault();
 
+    setMailStatus("pending");
+
     // send email data to server
     // need to have some indicator of send progress
-    axios.post('/api/mail', {
-      name: name,
-      address: email,
-      message: message
-    })
-      .then(res => {
+    axios
+      .post("/api/mail", {
+        name: name,
+        address: email,
+        message: message,
+      })
+      .then((res) => {
         // need to replace line below with a Toast
-        setError(`Success!`);
+        setMailStatus("sent");
         setName("");
         setEmail("");
         setMessage("");
       })
-      .catch(err => {
-        console.log({err});
+      .catch((err) => {
+        console.log({ err });
         setError(`Error: ${err}`);
       });
+  };
+
+  // function called when Toast is dismissed
+  const toastCloseEffect = () => {
+    setMailStatus("none");
   };
 
   // each input form is tied to React (the value displays the state, onChange updates state)
@@ -52,6 +64,7 @@ export default function Contact() {
     <Wrapper>
       <Card>
         <Title>Contact Me</Title>
+
         <form onSubmit={handleSubmit}>
           <InputWrapper>
             <NameWrapper>
@@ -113,6 +126,14 @@ export default function Contact() {
 
           {/* display error notification when triggered */}
           {error && <Notify message={error} />}
+
+          {/* temporary message displaying success of mail send */}
+          {mailStatus === "sent" && (
+            <ToastMessage
+              message="Success! Email has been sent"
+              toastCloseEffect={toastCloseEffect}
+            />
+          )}
 
           <Button type="submit">Submit</Button>
         </form>
