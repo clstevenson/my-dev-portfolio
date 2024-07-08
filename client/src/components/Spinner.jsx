@@ -1,5 +1,6 @@
 /* 
  A spinning circle meant to convey "busy." It will display in the middle of the viewport.
+ It is up to the dev to tie the display of this component to some state.
 
  Adapted from JWC's CSS Course.
  */
@@ -20,7 +21,13 @@ const Wrapper = styled.div`
   transform: translate(-50%, -50%);
   background-color: white;
   border-radius: 50%;
-  padding: 2px;
+  padding: 1px;
+  z-index: 999;
+
+  /* backdrop doesn't seem to work... */
+  /* &::backdrop {
+    background-color: grey;
+  } */
 `;
 
 const spinning = keyframes`
