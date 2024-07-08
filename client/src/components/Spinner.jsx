@@ -1,29 +1,14 @@
 /* 
- A spinning circle meant to convey "busy." It will display in the middle of the viewport.
- It is up to the dev to tie the display of this component to some state.
+ A spinning circle meant to convey "busy." It is a simple (block display) animated SVG image.
+ Any image properties (notably height and width) used as props are passed to the img tag.
 
  Adapted from JWC's CSS Course.
  */
 import styled, { keyframes } from "styled-components";
 
-const Spinner = () => {
-  return (
-    <Wrapper>
-      <Image alt="Busy..." src="./assets/loader.svg" />
-    </Wrapper>
-  );
+const Spinner = ({ ...delegated }) => {
+  return <Image {...delegated} alt="Busy..." src="./assets/loader.svg" />;
 };
-
-const Wrapper = styled.div`
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  border-radius: 50%;
-  padding: 1px;
-  z-index: 999;
-`;
 
 const spinning = keyframes`
   from {transform: rotate(0turn)};
@@ -32,8 +17,6 @@ const spinning = keyframes`
 
 const Image = styled.img`
   display: block;
-  width: 32px;
-  height: 32px;
   animation: ${spinning} 1000ms linear infinite;
 `;
 

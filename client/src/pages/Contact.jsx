@@ -139,10 +139,15 @@ export default function Contact() {
             />
           )}
 
-          {/* display spinner while email is sending */}
-          {mailStatus === "pending" && <Spinner />}
-
           <Button type="submit">Submit</Button>
+
+          {/* display spinner while email is sending */}
+          {mailStatus === "pending" && (
+            <BusyWrapper>
+              <Spinner width="18px" height="18px" />
+              <p>Sending...</p>
+            </BusyWrapper>
+          )}
         </form>
       </Card>
     </Wrapper>
@@ -152,6 +157,14 @@ export default function Contact() {
 const Wrapper = styled.article`
   width: min(var(--max-prose-width), 100%);
   margin: 24px auto;
+`;
+
+const BusyWrapper = styled.div`
+  display: flex;
+  margin: 12px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
 `;
 
 const InputWrapper = styled.div`
