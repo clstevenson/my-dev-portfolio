@@ -4,15 +4,17 @@
 
 ## Description
 
-This React app was created to present my development portfolio and showcase my skills and strengths as a developer. A screenshot of the top of the portfolio page is below.
+This website app was created to present my development portfolio and showcase my skills and strengths as a developer. The front-end was created with React using `styled-components` and a few [Radix](https://www.radix-ui.com) primitives. It contains a simple `node.js` back-end to send emails using `nodemailer`.
+
+A screenshot of the top of the portfolio page (as initially deployed) is below.
 
 ![screenshot](./client/public/assets/DevPortfolioScreenshot.png)
 
 ## Use
 
-This is a simple single-page front-end app, so there is no installation. Just point your browser to the deployed page:
+This app has is now deployed on Render at:
 
-<https://cls-dev-portfolio.netlify.app>
+<https://cls-dev-portfolio.onrender.com>
 
 The code itself is licensed under MIT and can be found in the following GitHub repo.
 
