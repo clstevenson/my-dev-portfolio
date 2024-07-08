@@ -6,7 +6,7 @@
 
 This React app was created to present my development portfolio and showcase my skills and strengths as a developer. A screenshot of the top of the portfolio page is below.
 
-![screenshot](./public/assets/DevPortfolioScreenshot.png)
+![screenshot](./client/public/assets/DevPortfolioScreenshot.png)
 
 ## Use
 
