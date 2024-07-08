@@ -23,11 +23,6 @@ const Wrapper = styled.div`
   border-radius: 50%;
   padding: 1px;
   z-index: 999;
-
-  /* backdrop doesn't seem to work... */
-  /* &::backdrop {
-    background-color: grey;
-  } */
 `;
 
 const spinning = keyframes`
