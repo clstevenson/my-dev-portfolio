@@ -51,7 +51,10 @@ export default function Contact() {
       })
       .catch((err) => {
         console.log({ err });
-        setError(`Error: ${err}`);
+        setMailStatus("none");
+        setError(
+          "Something went wrong. Please check your inputs and try again. If you think the problem is on my end, I'd appreciate if you tell me about it using the email link in the footer."
+        );
       });
   };
 
