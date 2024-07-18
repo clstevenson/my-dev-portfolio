@@ -10,13 +10,10 @@ import styled from "styled-components";
 import { COLORS, QUERIES } from "../util/constants";
 
 export default function NavBar({ navLinks }) {
-  // get the current page to indicate the current link
-  const currentPage = useLocation().pathname;
-
   return (
     <Wrapper>
       {navLinks.map((link) => (
-        <ListItem key={link.id} isCurrent={link.href === currentPage}>
+        <ListItem key={link.id} href={link.href}>
           <NavLink to={link.href}>{link.label}</NavLink>
         </ListItem>
       ))}
@@ -41,9 +38,9 @@ const Wrapper = styled.ul`
 const ListItem = styled.li`
   padding: 0 4px;
   transition: transform 400ms;
-  border-bottom: ${({ isCurrent }) => {
-    return isCurrent && "2px solid " + COLORS.primary;
-  }};
+  /* indicate current back with bottom border */
+  border-bottom: ${({ href }) =>
+    useLocation().pathname === href && "2px solid " + COLORS.primary};
 
   &:hover {
     transform-origin: 50% 100%;
