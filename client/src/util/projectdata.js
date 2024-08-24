@@ -12,17 +12,17 @@ const projectData = [
     description:
       "Prototype of a website for a client, the Virginia Masters Swim Team (VMST). The focus of the website is to foster communication between members and the VMST Board.",
     notes:
-      "A full-stack web application developed as a collaborative project with three partners; it has been forked into my repo for further development pending demo to the VMST board by the end of July. I designed the MongoDB database and wrote the CRUD operations in Mongoose and GraphQL. I created the Membership Coordinator page including the CSV membership data upload.",
+    "A sophisticated full-stack web application developed initially as a collaborative project with three partners, but since forked and completely refactored and greatly expanded. As of August 2024, an MVP has been approved by the VMST president for adoption as the team website.",
     repoURL: "https://github.com/clstevenson/VMST-Website",
     deployedURL: "https://vmst-website.onrender.com/",
     graphicURL: "./assets/VMST_Website_ScreenShot.png",
-    myCommits: 71,
-    totalCommits: 152,
+    myCommits: 216,
+    totalCommits: 297,
     isVideo: false,
-    languagePercentage: [{ JavaScript: 77.3 }, { CSS: 22.5 }, { HTML: 0.2 }],
+    languagePercentage: [{ JavaScript: 99.5 },],
     isHighlight: true,
     isCollaboration: true,
-    tags: ["full-stack", "GraphQL", "React", "MongoDB", "Mongoose"],
+    tags: ["full-stack", "GraphQL", "React", "MongoDB", "Mongoose", "CSS-in-JS"],
   },
   {
     id: crypto.randomUUID(),
